@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Environment variables — NEVER commit this!
+.env
+
+# Local database (resets on each deploy, that's fine)
+data/
+
+# Temp files from model listing
+models.json
+models.txt
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor
+.vscode/
+.idea/
