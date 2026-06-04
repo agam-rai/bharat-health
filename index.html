@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Bharat Health — India's AI-Powered Health Companion. Check symptoms, get personalized AI health advice, and understand your medical reports in simple language.">
+  <meta name="theme-color" content="#4B39EF">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Bharat Health">
+
+  <!-- Open Graph / WhatsApp / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Bharat Health — AI Health Companion 🇮🇳">
+  <meta property="og:description" content="Check your symptoms with AI, get personalized medicine & home remedy advice, and understand your medical reports in simple language. Free for everyone.">
+  <meta property="og:image" content="/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bharat Health — AI Health Companion">
+  <meta name="twitter:description" content="AI-powered symptom checker with personalized health advice for India.">
+
+  <title>Bharat Health — AI Health Companion 🇮🇳</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div id="app" class="app-shell">
+
+    <!-- ══════════════════════════════════════════════════ -->
+    <!-- ONBOARDING PAGE                                    -->
+    <!-- ══════════════════════════════════════════════════ -->
+    <section id="page-onboarding" class="page" data-page="onboarding">
+      <div class="onboarding-hero">
+        <div class="onboarding-hero-bg"></div>
+        <div class="onboarding-hero-content">
+          <div class="onboarding-icon-pulse" style="box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+            <span class="material-icons-round" style="font-size:64px;color:#fff; text-shadow: 0 2px 8px rgba(0,0,0,0.5);">favorite</span>
+          </div>
+          <h1 class="onboarding-title">Bharat Health</h1>
+          <p class="onboarding-subtitle">Your AI-Powered Health Companion</p>
+        </div>
+      </div>
+
+      <div class="onboarding-body">
+        <div class="onboarding-section-header">
+          <h2 class="title-medium">Welcome to smarter health</h2>
+          <p class="body-medium text-secondary">Powered by advanced AI to help you understand your symptoms</p>
+        </div>
+
+        <div class="onboarding-features">
+          <div class="feature-row">
+            <div class="feature-icon-wrap bg-primary-soft"><span class="material-icons-round text-primary">psychology</span></div>
+            <div class="feature-text">
+              <p class="title-small">AI Symptom Analysis</p>
+              <p class="body-small text-secondary">Describe how you feel and get instant medical insights</p>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="feature-icon-wrap bg-secondary-soft"><span class="material-icons-round text-secondary-color">person</span></div>
+            <div class="feature-text">
+              <p class="title-small">Medical Profile</p>
+              <p class="body-small text-secondary">Track your health data, allergies, and medical history</p>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="feature-icon-wrap bg-tertiary-soft"><span class="material-icons-round text-tertiary">insights</span></div>
+            <div class="feature-text">
+              <p class="title-small">Health Insights</p>
+              <p class="body-small text-secondary">Get personalized recommendations and track conditions</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="onboarding-privacy">
+          <span class="material-icons-round text-secondary" style="font-size:20px">shield</span>
+          <div>
+            <p class="body-small"><strong>Your data is private</strong></p>
+            <p class="body-small text-secondary">All health data is stored locally and never shared</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="onboarding-footer">
+        <button class="btn-primary btn-full" onclick="App.navigate('home')">
+          <span class="material-icons-round">arrow_forward</span>
+          Get Started
+        </button>
+        <p class="body-small text-secondary" style="text-align:center;margin-top:12px">
+          By continuing, you agree to our <a href="#" class="text-primary">Terms</a> & <a href="#" class="text-primary">Privacy Policy</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════ -->
+    <!-- HOME PAGE                                          -->
+    <!-- ══════════════════════════════════════════════════ -->
+    <section id="page-home" class="page" data-page="home">
+      <header class="page-header home-header">
+        <div>
+          <h1 class="headline-small">Good morning 👋</h1>
+          <p class="body-medium text-secondary">How are you feeling today?</p>
+        </div>
+        <button class="icon-btn" onclick="App.navigate('settings')">
+          <span class="material-icons-round">settings</span>
+        </button>
+      </header>
+
+      <div class="home-body">
+        <!-- Quick Actions -->
+        <div class="home-quick-actions">
+          <button class="quick-action-card qa-primary" onclick="App.navigate('chat')">
+            <div class="qa-icon"><span class="material-icons-round">chat_bubble</span></div>
+            <div class="qa-text">
+              <p class="title-small" style="color:#fff">Symptom Checker</p>
+              <p class="body-small" style="color:rgba(255,255,255,0.8)">Chat with our AI assistant</p>
+            </div>
+            <span class="material-icons-round" style="color:rgba(255,255,255,0.6)">arrow_forward</span>
+          </button>
+
+          <button class="quick-action-card qa-report" onclick="App.navigate('chat'); setTimeout(() => App.showReportMode(), 300)">
+            <div class="qa-icon" style="background-color:rgba(57,210,192,0.2)">
+              <span class="material-icons-round" style="color:var(--secondary)">receipt_long</span>
+            </div>
+            <div class="qa-text">
+              <p class="title-small">Report Explainer</p>
+              <p class="body-small text-secondary">Upload medical reports & understand them in simple language</p>
+            </div>
+            <span class="material-icons-round text-secondary" style="font-size:20px">arrow_forward</span>
+          </button>
+
+          <div class="qa-row">
+            <button class="quick-action-card qa-small" onclick="App.navigate('profile')">
+              <div class="qa-icon-sm bg-secondary-soft"><span class="material-icons-round text-secondary-color">person</span></div>
+              <p class="label-medium">My Profile</p>
+            </button>
+            <button class="quick-action-card qa-small" onclick="App.navigate('diagnosis')">
+              <div class="qa-icon-sm bg-tertiary-soft"><span class="material-icons-round text-tertiary">assignment</span></div>
+              <p class="label-medium">Past Results</p>
+            </button>
+          </div>
+        </div>
+
+        <!-- Health Tip -->
+        <div class="home-section">
+          <div class="section-header-row">
+            <h2 class="title-medium">Health Tip of the Day</h2>
+            <span class="material-icons-round text-secondary" style="font-size:20px">lightbulb</span>
+          </div>
+          <div class="health-tip-card">
+            <div class="tip-gradient"></div>
+            <div class="tip-content">
+              <p class="title-small">Stay Hydrated 💧</p>
+              <p class="body-small text-secondary" style="margin-top:4px">Drinking 8 glasses of water daily helps maintain body temperature, lubricates joints, and aids digestion.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="home-section">
+          <div class="section-header-row">
+            <h2 class="title-medium">Recent Activity</h2>
+            <button class="text-btn text-primary" onclick="App.navigate('diagnosis')">See all</button>
+          </div>
+          <div id="home-recent-activity" class="recent-list">
+            <div class="empty-state-mini">
+              <span class="material-icons-round text-secondary" style="font-size:32px">history</span>
+              <p class="body-small text-secondary">No recent activity yet</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="home-section">
+          <h2 class="title-medium">Your Health Stats</h2>
+          <div class="stats-grid" id="home-stats">
+            <div class="stat-card">
+              <span class="material-icons-round text-primary" style="font-size:24px">monitor_heart</span>
+              <p class="headline-small" id="stat-checkups">0</p>
+              <p class="label-small text-secondary">Check-ups</p>
+            </div>
+            <div class="stat-card">
+              <span class="material-icons-round text-secondary-color" style="font-size:24px">chat</span>
+              <p class="headline-small" id="stat-chats">0</p>
+              <p class="label-small text-secondary">Chat Sessions</p>
+            </div>
+            <div class="stat-card">
+              <span class="material-icons-round text-tertiary" style="font-size:24px">trending_up</span>
+              <p class="headline-small" style="color:var(--success)">Good</p>
+              <p class="label-small text-secondary">Health Score</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════ -->
+    <!-- MAIN CHAT INTERFACE                                -->
+    <!-- ══════════════════════════════════════════════════ -->
+    <section id="page-chat" class="page" data-page="chat">
+      <header class="page-header chat-header">
+        <div class="header-left">
+          <button class="icon-btn" onclick="App.navigate('home')">
+            <span class="material-icons-round">arrow_back</span>
+          </button>
+          <div>
+            <h1 class="title-medium">Symptom Checker</h1>
+            <div class="online-indicator">
+              <div class="online-dot"></div>
+              <span class="label-small text-secondary">Online</span>
+            </div>
+          </div>
+        </div>
+        <button class="icon-btn" onclick="App.navigate('settings')">
+          <span class="material-icons-round">more_vert</span>
+        </button>
+      </header>
+
+      <!-- Disclaimer -->
+      <div class="chat-disclaimer">
+        <span class="material-icons-round" style="font-size:18px">info</span>
+        <p class="body-small">Disclaimer: This tool is for informational purposes and not a substitute for professional medical advice.</p>
+      </div>
+
+      <!-- Chat Messages -->
+      <div class="chat-messages" id="chat-messages">
+        <!-- Messages inserted by JS -->
+      </div>
+
+      <!-- Quick Symptom Chips -->
+      <div class="chat-chips" id="chat-chips">
+        <button class="symptom-chip" onclick="App.sendQuickSymptom('I have a sharp pain')">
+          <span class="material-icons-round" style="font-size:16px">bolt</span> Sharp pain
+        </button>
+        <button class="symptom-chip" onclick="App.sendQuickSymptom('I have a dull ache')">
+          <span class="material-icons-round" style="font-size:16px">circle</span> Dull ache
+        </button>
+        <button class="symptom-chip" onclick="App.sendQuickSymptom('I have blurred vision')">
+          <span class="material-icons-round" style="font-size:16px">visibility_off</span> Blurred vision
+        </button>
+        <button class="symptom-chip" onclick="App.sendQuickSymptom('I have a headache')">
+          <span class="material-icons-round" style="font-size:16px">psychology</span> Headache
+        </button>
+        <button class="symptom-chip" onclick="App.sendQuickSymptom('I have stomach pain')">
+          <span class="material-icons-round" style="font-size:16px">sick</span> Stomach pain
+        </button>
+        <button class="symptom-chip" onclick="App.sendQuickSymptom('I have chest pain')">
+          <span class="material-icons-round" style="font-size:16px">favorite</span> Chest pain
+        </button>
+        <button class="symptom-chip report-chip" onclick="App.showReportMode()">
+          <span class="material-icons-round" style="font-size:16px">receipt_long</span> Analyze Report
+        </button>
+      </div>
+
+      <!-- Chat Input -->
+      <div class="chat-input-area">
+        <div class="chat-input-row">
+          <div class="chat-input-actions">
+            <button class="icon-btn-sm" onclick="document.getElementById('camera-input').click()" title="Take Photo"><span class="material-icons-round">photo_camera</span></button>
+            <button class="icon-btn-sm" onclick="document.getElementById('chat-file-input').click()" title="Attach Report File"><span class="material-icons-round">attach_file</span></button>
+          </div>
+          <input type="file" id="camera-input" accept="image/*" capture="environment" style="display:none" onchange="App.handleChatFileUpload(event)">
+          <input type="file" id="chat-file-input" accept=".txt,.pdf,.jpg,.jpeg,.png,image/*" style="display:none" onchange="App.handleChatFileUpload(event)">
+          <div class="chat-input-wrap">
+            <span class="material-icons-round chat-input-icon">edit</span>
+            <input type="text" id="chat-input" class="chat-input" placeholder="Type your symptoms..." autocomplete="off">
+            <button class="chat-send-btn" id="chat-send-btn" onclick="App.sendMessage()">
+              <span class="material-icons-round">send</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════ -->
+    <!-- DIAGNOSIS SUMMARY PAGE                             -->
+    <!-- ══════════════════════════════════════════════════ -->
+    <section id="page-diagnosis" class="page" data-page="diagnosis">
+      <header class="page-header">
+        <div class="header-left">
+          <button class="icon-btn" onclick="App.navigate('home')">
+            <span class="material-icons-round">arrow_back</span>
+          </button>
+          <div>
+            <h1 class="title-medium">Diagnosis Summary</h1>
+            <p class="label-small text-secondary" id="diagnosis-date"></p>
+          </div>
+        </div>
+        <button class="icon-btn" onclick="App.shareDiagnosis()">
+          <span class="material-icons-round">share</span>
+        </button>
+      </header>
+
+      <div class="diagnosis-body" id="diagnosis-body">
+        <!-- Primary Diagnosis -->
+        <div class="diagnosis-primary" id="diagnosis-primary">
+          <div class="diagnosis-primary-icon">
+            <span class="material-icons-round">medical_information</span>
+          </div>
+          <div>
+            <h2 class="title-medium" id="diag-primary-name">No diagnosis yet</h2>
+            <p class="body-small text-secondary" id="diag-primary-desc">Start a symptom check to get results</p>
+          </div>
+        </div>
+
+        <!-- Conditions List -->
+        <div class="diagnosis-section">
+          <h3 class="title-small" style="margin-bottom:12px">Possible Conditions</h3>
+          <div id="diagnosis-conditions" class="diagnosis-conditions-list">
+            <div class="empty-state-mini">
+              <span class="material-icons-round text-secondary" style="font-size:40px">search</span>
+              <p class="body-medium text-secondary">No conditions analyzed</p>
+              <button class="btn-outline" style="margin-top:12px" onclick="App.navigate('chat')">Start Symptom Check</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI Advice Container -->
+        <div id="ai-advice-container" style="display:none; margin-top:16px;"></div>
+
+        <!-- Action Cards -->
+        <div class="diagnosis-actions" id="diagnosis-actions" style="display:none">
+          <button class="action-card action-card-primary" onclick="App.navigate('chat')">
+            <span class="material-icons-round">refresh</span>
+            <div>
+              <p class="title-small" style="color:#fff">New Check</p>
+              <p class="body-small" style="color:rgba(255,255,255,0.8)">Start a fresh symptom analysis</p>
+            </div>
+          </button>
+          <button class="action-card action-card-secondary" onclick="App.navigate('profile')">
+            <span class="material-icons-round">person</span>
+            <div>
+              <p class="title-small">View Profile</p>
+              <p class="body-small text-secondary">Check your health data</p>
+            </div>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════ -->
+    <!-- MEDICAL PROFILE PAGE                               -->
+    <!-- ══════════════════════════════════════════════════ -->
+    <section id="page-profile" class="page" data-page="profile">
+      <header class="page-header">
+        <div class="header-left">
+          <button class="icon-btn" onclick="App.navigate('home')">
+            <span class="material-icons-round">arrow_back</span>
+          </button>
+          <h1 class="title-medium">Medical Profile</h1>
+        </div>
+        <button class="icon-btn" id="profile-edit-btn" onclick="App.toggleProfileEdit()">
+          <span class="material-icons-round">edit</span>
+        </button>
+      </header>
+
+      <div class="profile-body">
+        <!-- Avatar Section -->
+        <div class="profile-avatar-section">
+          <div class="profile-avatar">
+            <span class="material-icons-round" style="font-size: 48px; color: #fff;">person</span>
+            <button class="profile-edit-btn" onclick="document.getElementById('chat-file-input').click()">
+              <span class="material-icons-round" style="font-size: 16px;">photo_camera</span>
+            </button>
+          </div>
+          <h2 class="title-medium" id="profile-name">Arjun Sharma</h2>
+          <p class="body-small text-secondary" id="profile-email">arjun@bharathealth.app</p>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="profile-stats-row">
+          <div class="profile-stat">
+            <div class="profile-stat-icon bg-primary-soft">
+              <span class="material-icons-round text-primary" style="font-size:20px">cake</span>
+            </div>
+            <p class="title-small" id="profile-age">28</p>
+            <p class="label-small text-secondary">Age</p>
+          </div>
+          <div class="profile-stat">
+            <div class="profile-stat-icon bg-error-soft">
+              <span class="material-icons-round" style="font-size:20px;color:var(--error)">bloodtype</span>
+            </div>
+            <p class="title-small" id="profile-blood">O+</p>
+            <p class="label-small text-secondary">Blood Type</p>
+          </div>
+          <div class="profile-stat">
+            <div class="profile-stat-icon bg-secondary-soft">
+              <span class="material-icons-round text-secondary-color" style="font-size:20px">monitor_weight</span>
+            </div>
+            <p class="title-small" id="profile-weight">72 kg</p>
+            <p class="label-small text-secondary">Weight</p>
+          </div>
+        </div>
+
+        <!-- Allergies & Conditions -->
+        <div class="profile-section">
+          <h3 class="title-small">Allergies & Conditions</h3>
+          <div class="chips-wrap" id="profile-chips">
+            <!-- Chips injected by JS -->
+          </div>
+        </div>
+
+        <!-- Health Chart Placeholder -->
+        <div class="profile-section">
+          <div class="section-header-row">
+            <h3 class="title-small">Health Overview</h3>
+            <p class="label-small text-secondary">Last 6 months</p>
+          </div>
+          <div class="chart-placeholder" id="health-chart">
+            <div class="chart-bars">
+              <div class="chart-bar" style="height:60%"><span>Jan</span></div>
+              <div class="chart-bar" style="height:80%"><span>Feb</span></div>
+              <div class="chart-bar active" style="height:45%"><span>Mar</span></div>
+              <div class="chart-bar" style="height:90%"><span>Apr</span></div>
+              <div class="chart-bar" style="height:70%"><span>May</span></div>
+              <div class="chart-bar active" style="height:55%"><span>Jun</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Medical History -->
+        <div class="profile-section">
+          <div class="section-header-row">
+            <h3 class="title-small">Medical History</h3>
+            <button class="text-btn text-primary">See all</button>
+          </div>
+          <div class="history-list" id="profile-history">
+            <div class="history-item">
+              <div class="history-icon bg-primary-soft"><span class="material-icons-round text-primary" style="font-size:20px">vaccines</span></div>
+              <div class="history-text">
+                <p class="body-medium">Annual Check-up</p>
+                <p class="label-small text-secondary">March 15, 2026</p>
+              </div>
+              <div class="history-badge badge-success">
+                <p class="label-small">Normal</p>
+              </div>
+            </div>
+            <div class="history-item">
+              <div class="history-icon bg-tertiary-soft"><span class="material-icons-round text-tertiary" style="font-size:20px">healing</span></div>
+              <div class="history-text">
+                <p class="body-medium">Allergy Test</p>
+                <p class="label-small text-secondary">January 8, 2026</p>
+              </div>
+              <div class="history-badge badge-warning">
+                <p class="label-small">2 Found</p>
+              </div>
+            </div>
+            <div class="history-item">
+              <div class="history-icon bg-secondary-soft"><span class="material-icons-round text-secondary-color" style="font-size:20px">monitor_heart</span></div>
+              <div class="history-text">
+                <p class="body-medium">Blood Work</p>
+                <p class="label-small text-secondary">November 20, 2025</p>
+              </div>
+              <div class="history-badge badge-success">
+                <p class="label-small">Normal</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Emergency Contact -->
+        <div class="profile-section">
+          <div class="emergency-card">
+            <div class="emergency-icon"><span class="material-icons-round" style="color:var(--error)">emergency</span></div>
+            <div class="emergency-info">
+              <p class="body-medium" id="emergency-name">Priya Sharma</p>
+              <p class="label-small text-secondary" id="emergency-phone">+91 98765 43210</p>
+              <p class="label-small text-secondary" id="emergency-relation">Spouse</p>
+            </div>
+            <button class="icon-btn"><span class="material-icons-round text-primary">call</span></button>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <button class="btn-primary btn-full" onclick="App.navigate('chat')" style="margin-top:8px">
+          <span class="material-icons-round">chat_bubble</span>
+          Start Health Check
+        </button>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════ -->
+    <!-- SETTINGS PAGE                                      -->
+    <!-- ══════════════════════════════════════════════════ -->
+    <section id="page-settings" class="page" data-page="settings">
+      <header class="page-header">
+        <div class="header-left">
+          <button class="icon-btn" onclick="App.navigate('home')">
+            <span class="material-icons-round">arrow_back</span>
+          </button>
+          <h1 class="title-medium">Settings</h1>
+        </div>
+      </header>
+
+      <div class="settings-body">
+        <!-- Account -->
+        <div class="settings-group">
+          <button class="settings-row" onclick="App.navigate('profile')">
+            <div class="settings-row-left">
+              <div class="settings-icon bg-primary-soft"><span class="material-icons-round text-primary">person</span></div>
+              <div>
+                <p class="body-medium">Account</p>
+                <p class="label-small text-secondary">Manage your profile</p>
+              </div>
+            </div>
+            <div class="settings-row-right">
+              <span class="label-small text-secondary" id="settings-account-name">Arjun</span>
+              <span class="material-icons-round text-secondary">chevron_right</span>
+            </div>
+          </button>
+
+          <!-- Dark Mode -->
+          <div class="settings-row">
+            <div class="settings-row-left">
+              <div class="settings-icon bg-dark-soft"><span class="material-icons-round" style="color:var(--primary-text)">dark_mode</span></div>
+              <div>
+                <p class="body-medium">Dark Mode</p>
+                <p class="label-small text-secondary">Switch to dark theme</p>
+              </div>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="setting-darkmode" onchange="App.toggleDarkMode(this.checked)">
+              <span class="switch-slider"></span>
+            </label>
+          </div>
+
+          <!-- Notifications -->
+          <div class="settings-row">
+            <div class="settings-row-left">
+              <div class="settings-icon bg-secondary-soft"><span class="material-icons-round text-secondary-color">notifications</span></div>
+              <div>
+                <p class="body-medium">Notifications</p>
+                <p class="label-small text-secondary">Push alerts & reminders</p>
+              </div>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="setting-notifications" checked onchange="App.updateSetting('notifications', this.checked)">
+              <span class="switch-slider"></span>
+            </label>
+          </div>
+
+          <!-- Biometric -->
+          <div class="settings-row">
+            <div class="settings-row-left">
+              <div class="settings-icon bg-tertiary-soft"><span class="material-icons-round text-tertiary">fingerprint</span></div>
+              <div>
+                <p class="body-medium">Biometric Login</p>
+                <p class="label-small text-secondary">Use fingerprint or face</p>
+              </div>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="setting-biometric" onchange="App.updateSetting('biometricLogin', this.checked)">
+              <span class="switch-slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="settings-divider"></div>
+
+        <!-- Language Selector -->
+        <div class="settings-group">
+          <p class="label-medium text-secondary" style="margin-bottom:8px;padding:0 4px">LANGUAGE</p>
+          <div class="settings-row">
+            <div class="settings-row-left">
+              <div class="settings-icon" style="background:rgba(75,57,239,0.1)"><span class="material-icons-round text-primary">translate</span></div>
+              <div>
+                <p class="body-medium">App Language</p>
+                <p class="label-small text-secondary">Chat in your preferred language</p>
+              </div>
+            </div>
+            <select id="setting-language" class="language-select" onchange="App.setLanguage(this.value)">
+              <option value="en-IN">English</option>
+              <option value="hi-IN">हिन्दी (Hindi)</option>
+              <option value="bn-IN">বাংলা (Bengali)</option>
+              <option value="ta-IN">தமிழ் (Tamil)</option>
+              <option value="te-IN">తెలుగు (Telugu)</option>
+              <option value="mr-IN">मराठी (Marathi)</option>
+              <option value="gu-IN">ગુજરાતી (Gujarati)</option>
+              <option value="kn-IN">ಕನ್ನಡ (Kannada)</option>
+              <option value="ml-IN">മലയാളം (Malayalam)</option>
+              <option value="pa-IN">ਪੰਜਾਬੀ (Punjabi)</option>
+              <option value="or-IN">ଓଡ଼ିଆ (Odia)</option>
+              <option value="as-IN">অসমীয়া (Assamese)</option>
+              <option value="ur-IN">اردو (Urdu)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="settings-divider"></div>
+
+        <!-- Support Group -->
+        <div class="settings-group">
+          <button class="settings-row" onclick="App.navigate('profile')">
+            <div class="settings-row-left">
+              <div class="settings-icon bg-primary-soft"><span class="material-icons-round text-primary">security</span></div>
+              <div>
+                <p class="body-medium">Privacy & Security</p>
+                <p class="label-small text-secondary">Data protection settings</p>
+              </div>
+            </div>
+            <span class="material-icons-round text-secondary">chevron_right</span>
+          </button>
+
+          <button class="settings-row">
+            <div class="settings-row-left">
+              <div class="settings-icon bg-secondary-soft"><span class="material-icons-round text-secondary-color">help</span></div>
+              <div>
+                <p class="body-medium">Help & Support</p>
+                <p class="label-small text-secondary">FAQs, contact us</p>
+              </div>
+            </div>
+            <span class="material-icons-round text-secondary">chevron_right</span>
+          </button>
+
+          <button class="settings-row">
+            <div class="settings-row-left">
+              <div class="settings-icon bg-tertiary-soft"><span class="material-icons-round text-tertiary">info</span></div>
+              <div>
+                <p class="body-medium">About</p>
+                <p class="label-small text-secondary">Version & legal info</p>
+              </div>
+            </div>
+            <span class="material-icons-round text-secondary">chevron_right</span>
+          </button>
+        </div>
+
+        <div class="settings-divider"></div>
+
+        <!-- More Actions -->
+        <div class="settings-group">
+          <button class="settings-row">
+            <div class="settings-row-left">
+              <div class="settings-icon" style="background:rgba(255,193,7,0.12)"><span class="material-icons-round" style="color:#FFC107">star</span></div>
+              <div>
+                <p class="body-medium">Rate the App</p>
+                <p class="label-small text-secondary">Help us improve</p>
+              </div>
+            </div>
+            <span class="material-icons-round text-secondary">chevron_right</span>
+          </button>
+          <button class="settings-row">
+            <div class="settings-row-left">
+              <div class="settings-icon bg-primary-soft"><span class="material-icons-round text-primary">share</span></div>
+              <div>
+                <p class="body-medium">Share with Friends</p>
+                <p class="label-small text-secondary">Spread the health</p>
+              </div>
+            </div>
+            <span class="material-icons-round text-secondary">chevron_right</span>
+          </button>
+          <button class="settings-row">
+            <div class="settings-row-left">
+              <div class="settings-icon bg-secondary-soft"><span class="material-icons-round text-secondary-color">email</span></div>
+              <div>
+                <p class="body-medium">Contact Us</p>
+                <p class="label-small text-secondary">Send feedback or report issues</p>
+              </div>
+            </div>
+            <span class="material-icons-round text-secondary">chevron_right</span>
+          </button>
+        </div>
+
+        <!-- Logout -->
+        <button class="btn-danger btn-full" style="margin-top:24px">
+          <span class="material-icons-round">logout</span>
+          Log Out
+        </button>
+
+        <!-- Footer -->
+        <div class="settings-footer">
+          <p class="label-small text-secondary">Bharat Health v1.0.0</p>
+          <p class="label-small text-secondary">© 2026 Bharat Health. All rights reserved.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Camera Modal -->
+  <div id="camera-modal" class="camera-modal" style="display:none">
+    <div class="camera-modal-inner">
+      <div class="camera-header">
+        <button class="icon-btn" onclick="App.closeCamera()">
+          <span class="material-icons-round">close</span>
+        </button>
+        <p class="title-small">Take Photo of Report</p>
+        <button class="icon-btn" onclick="App.switchCamera()" id="camera-switch-btn">
+          <span class="material-icons-round">flip_camera_ios</span>
+        </button>
+      </div>
+      <div class="camera-viewfinder">
+        <video id="camera-video" autoplay playsinline></video>
+        <canvas id="camera-canvas" style="display:none"></canvas>
+        <div class="camera-guide-overlay">
+          <div class="camera-guide-corners"></div>
+          <p class="body-small" style="color:rgba(255,255,255,0.7);text-align:center;margin-top:auto;padding-bottom:20px">Position your medical report within the frame</p>
+        </div>
+      </div>
+      <div class="camera-controls">
+        <button class="camera-capture-btn" onclick="App.capturePhoto()">
+          <div class="camera-capture-ring"></div>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading Overlay -->
+  <div id="loading-overlay" class="loading-overlay" style="display:none">
+    <div class="loading-spinner"></div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast" style="display:none"></div>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>
